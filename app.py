@@ -28,3 +28,7 @@ def check_voucher():
         return render_template("used.html", code=code, name=name, used_date=used_date)
     else:
         return render_template("valid.html", code=code, name=name, remaining=remaining, date_to=date_to)
+if __name__ == '__main__':
+    import os
+    port = int(os.environ.get('PORT', 5000))  # Render sẽ gán PORT vào biến môi trường
+    app.run(host='0.0.0.0', port=port)
