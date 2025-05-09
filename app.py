@@ -14,7 +14,7 @@ def check_voucher():
     if not code:
         return "Thiếu mã voucher."
 
-    conn = sqlite3.connect("C:/python/vouche/voucher.db")
+    conn = sqlite3.connect("C:/python/vouche/happy_travel_app/voucher.db")
     c = conn.cursor()
     c.execute("SELECT name, amount, remaining, used, used_date, date_to FROM vouchers WHERE code = ?", (code,))
     row = c.fetchone()
